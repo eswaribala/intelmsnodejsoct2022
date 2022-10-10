@@ -14,6 +14,7 @@ app.get('/',function(req,res){
 
 app.post('/customers',function (req,res){
     console.log(req.body);
+    res.send("Customer Data received");
 })
 
 app.listen(3000,function(){
