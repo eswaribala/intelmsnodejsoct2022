@@ -2,3 +2,4 @@ docker run --name intel-mongo -p 27017:27017 -d mongo
 docker exec -it intel-mongo /bin/bash
 cd bin
 mongosh
+show dbs;
