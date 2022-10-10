@@ -1,9 +1,13 @@
 const express=require("express");
-var bodyParser=require('body-parser');
+const bodyParser=require('body-parser');
+const cors=require('cors');
+
 const app=express();
 //rest methods get,post,put,delete,patch
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(cors());
+
 app.get('/',function(req,res){
     res.send('Customer API Ready to jfvdsdskhfgsdf Rock');
 })
