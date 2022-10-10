@@ -1,0 +1,31 @@
+List of tools and technology
+
+1. Nodejs with expressjs
+2. Graphql
+3. Vault Server
+4. Config server
+5. Discovery Eureka
+6. swagger
+7. api gateway routing
+8. circuit breaker fault isolation
+9. rabbitmq/ kafka
+10. prometheus with grafana
+11. ELK
+12. Jaegar tracing 
+
+
+SOLID
+
+S - Single Responsibility
+O - Open for Extension and Closed for Modification
+L - Liskov Principle
+I - Interface Segregation
+D - Dependency Inversion
+
+
+
+
+
+
+
+ 
