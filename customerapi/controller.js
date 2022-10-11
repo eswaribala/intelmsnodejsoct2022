@@ -44,3 +44,20 @@ exports.findAllCustomers=(req,res)=>{
        });
    });
 }
+exports.findByCustomerId=(req,res)=>{
+    Customer.find(req.params.id).then(data=>{
+        if(!data){
+            res.status(404).send({
+                message:
+                    err.message || 'customer data not found'
+            })
+        }
+        else
+         res.send(data);
+    }).catch(err=>{
+        res.status(500).send({
+            message:
+                err.message || 'Some error occurred while reading customer data'
+        });
+    });
+}
