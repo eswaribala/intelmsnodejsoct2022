@@ -83,3 +83,34 @@ exports.findByCustomerName=(req,res)=>{
         });
     });
 }
+
+//update
+exports.updateCustomer = (req, res) => {
+    // Validate request
+    if (!req.body) {
+        res.status(400).send({ message: "Content can not be empty!" });
+        return;
+    }
+
+    const id=req.params.id;
+    Customer.findByIdAndUpdate(id,req.body).then(data=>{
+        if(!data){
+            res.status(404).send({
+                message:
+                    data.message || 'customer data not found and not updated'
+            })
+        }
+        else
+        {
+            res.send(`Customer updated for ${id}`)
+        }
+    }).catch(err=>{
+
+        res.status(500).send({
+            message:
+                err.message || 'Some error occurred while reading customer data'
+        });
+    })
+
+
+};
