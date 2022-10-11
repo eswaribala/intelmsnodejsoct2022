@@ -32,3 +32,15 @@ exports.create = (req, res) => {
             });
         });
 };
+
+//retrieve data from database
+exports.findAllCustomers=(req,res)=>{
+   Customer.find().then(data=>{
+       res.send(data);
+    }).catch(err=>{
+       res.status(500).send({
+           message:
+            err.message || 'Some error occurred while reading customer data'
+       });
+   });
+}
