@@ -3,3 +3,8 @@ docker exec -it intel-mongo /bin/bash
 cd bin
 mongosh
 show dbs;
+use customerdb;
+show collections;
+db.customers.find();
+
+
