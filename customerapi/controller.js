@@ -1,7 +1,7 @@
 const db = require("./dbserver");
 const Customer = db.customers;
 
-// Create and Save a new Tutorial
+// Create and Save a new Customer
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.id) {
@@ -19,7 +19,7 @@ exports.create = (req, res) => {
         phoneNo: req.body.phoneNo
     });
 
-    // Save Tutorial in the database
+    // Save Customer in the database
     customer
         .save(customer)
         .then(data => {
