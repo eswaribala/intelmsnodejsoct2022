@@ -6,6 +6,8 @@ module.exports=function(app){
 
     app.post('/customers',function (req,res){
         console.log(req.body);
+        //access the model and save the data
+
         res.send("Customer Data received");
     })
 
