@@ -10,7 +10,7 @@ app.use(cors());
 
 const host=config.get('server.host');
 const port=config.get('server.port');
-
+//layered call
 require('./routes')(app);
 //external configuration
 app.listen(port,host,function(){
