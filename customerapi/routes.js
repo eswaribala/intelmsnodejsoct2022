@@ -12,5 +12,7 @@ module.exports = app => {
     //path param
     router.get("/byName/:name",controller.findByCustomerName);
 
+    //path param
+    router.get("/:id",controller.updateCustomer);
     app.use("/api/customers", router);
 }
