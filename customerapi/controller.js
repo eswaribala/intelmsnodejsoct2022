@@ -49,7 +49,7 @@ exports.findByCustomerId=(req,res)=>{
         if(!data){
             res.status(404).send({
                 message:
-                    err.message || 'customer data not found'
+                    data.message || 'customer data not found'
             })
         }
         else
