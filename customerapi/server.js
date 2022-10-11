@@ -20,6 +20,6 @@ app.post('/customers',function (req,res){
     res.send("Customer Data received");
 })
 
-app.listen(port,function(){
-    console.log("Listening on Port"+port)
+app.listen(port,host,function(){
+    console.log(`Listening on Port ${port}`)
 })
