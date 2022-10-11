@@ -6,3 +6,4 @@ const db={}
 db.mongoose=mongoose;
 db.url=mongoUrl;
 db.customers=require('./models')(mongoose);
+module.exports=db;
