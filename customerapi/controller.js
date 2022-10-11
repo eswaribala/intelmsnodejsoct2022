@@ -114,3 +114,20 @@ exports.updateCustomer = (req, res) => {
 
 
 };
+
+exports.deleteByCustomerId=(req,res)=>{
+    const id=req.params.id;
+    Customer.findByIdAndDelete(id)
+        .then(data=>{
+        if(!data){
+            res.status(404).send(`Customer ${id} not found`)
+        }
+        else
+            res.send(`Customer ${id} deleted successfully`);
+    }).catch(err=>{
+        res.status(500).send({
+            message:
+                err.message || 'Some error occurred while reading customer data'
+        });
+    });
+}

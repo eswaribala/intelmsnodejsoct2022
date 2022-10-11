@@ -14,5 +14,7 @@ module.exports = app => {
 
     //path param
     router.put("/:id",controller.updateCustomer);
+
+    router.delete("/:id",controller.deleteByCustomerId);
     app.use("/api/customers", router);
 }
