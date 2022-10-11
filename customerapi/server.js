@@ -11,15 +11,8 @@ app.use(cors());
 const host=config.get('server.host');
 const port=config.get('server.port');
 
-app.get('/',function(req,res){
-    res.send('Customer API Ready to jfvdsdskhfgsdf Rock');
-})
-
-app.post('/customers',function (req,res){
-    console.log(req.body);
-    res.send("Customer Data received");
-})
-
+require('./routes')(app);
+//external configuration
 app.listen(port,host,function(){
     console.log(`Listening on Port ${port}`)
 })
