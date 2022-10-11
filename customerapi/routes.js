@@ -7,6 +7,10 @@ module.exports = app => {
     //Retrieve customers data
     router.get("/",controller.findAllCustomers);
    //Retrieve customer by id
-    router.get("/:id/:name?",controller.findByCustomerId);
+    //path param
+    router.get("/:id",controller.findByCustomerId);
+    //path param
+    router.get("/:name",controller.findByCustomerName);
+
     app.use("/api/customers", router);
 }

@@ -45,7 +45,8 @@ exports.findAllCustomers=(req,res)=>{
    });
 }
 exports.findByCustomerId=(req,res)=>{
-    Customer.find(req.params.id).then(data=>{
+    const id=req.params.id;
+    Customer.findById(id).then(data=>{
         if(!data){
             res.status(404).send({
                 message:
@@ -54,6 +55,27 @@ exports.findByCustomerId=(req,res)=>{
         }
         else
          res.send(data);
+    }).catch(err=>{
+        res.status(500).send({
+            message:
+                err.message || 'Some error occurred while reading customer data'
+        });
+    });
+}
+
+
+exports.findByCustomerName=(req,res)=>{
+    const nameData=req.params.name;
+    Customer.findOne({'name':nameData})
+        .then(data=>{
+        if(!data){
+            res.status(404).send({
+                message:
+                    data.message || 'customer data not found'
+            })
+        }
+        else
+            res.send(data);
     }).catch(err=>{
         res.status(500).send({
             message:
