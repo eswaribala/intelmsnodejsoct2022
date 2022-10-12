@@ -137,9 +137,11 @@ exports.deleteByCustomerId=(req,res)=>{
 }
 
 exports.getAccountByAccountNo=(req,res)=>{
-
+console.log(req.params.accountNo);
+console.log(serviceUrl)
     axios.get(serviceUrl+"/"+req.params.accountNo).then(response=>{
-        res.send(response)
+        console.log(response.data);
+        res.send(response.data)
     }).catch(error=>{
         res.send(error);
     })
