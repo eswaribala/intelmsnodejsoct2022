@@ -14,9 +14,9 @@
     },
     "schemes": ["http"],
     "host": "localhost:3000",
-    "basePath": "/api",
+    "basePath": "/api/customers",
     "paths" : {
-        "/api/customers" : {
+        "/" : {
             "get" : {
                 "summary" : "Get all the customers",
                 "description": "Get all the customers",
