@@ -28,7 +28,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/customersResponse"
+                                "$ref": "#/definitions/customerResponse"
                             }
                         }
                     },
@@ -70,7 +70,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/customersResponse"
+                                "$ref": "#/definitions/customerResponse"
                             }
                         }
                     },
@@ -170,7 +170,7 @@
             "type": "object",
             "properties": {
                 "id": {
-                     "type": "long"
+                     "type": "number"
                 },
                 "name": {
                     "type": "string"
@@ -179,7 +179,7 @@
                     "type": "string"
                 },
                 "phoneNo": {
-                    "type": "long"
+                    "type": "number"
                 },
                 "address": {
                     "type": "string"
@@ -190,7 +190,7 @@
             "type": "object",
             "properties": {
                 "id": {
-                    "type": "long"
+                    "type": "number"
                 },
                 "name": {
                     "type": "string"
@@ -199,7 +199,7 @@
                     "type": "string"
                 },
                 "phoneNo": {
-                    "type": "long"
+                    "type": "numbers"
                 },
                 "address": {
                     "type": "string"
