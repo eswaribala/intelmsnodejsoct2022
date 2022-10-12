@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a simple example NodeJS API project to demonstrate Swagger Documentation",
+        "description": "This is a Banking Project Documentation",
         "version": "1.0.0",
         "title": "Customer API",
         "contact": {
@@ -18,8 +18,8 @@
     "paths" : {
         "/api/customers" : {
             "get" : {
-                "summary" : "Get all the tasks",
-                "description": "Get all the tasks",
+                "summary" : "Get all the customers",
+                "description": "Get all the customers",
                 "produces": ["application/json"],
                 "parameters": [],
                 "responses": {
@@ -28,7 +28,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/todosResponse"
+                                "$ref": "#/definitions/customersResponse"
                             }
                         }
                     },
@@ -43,22 +43,22 @@
         },
         "/" : {
             "post" : {
-                "summary" : "Save the task",
-                "description": "Save the task",
+                "summary" : "Save the Customer",
+                "description": "Save the customer",
                 "produces": ["application/json"],
                 "consumes": ["application/json"],
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "task object",
+                        "description": "customer  object",
                         "required": true,
                         "schema": {
                             "type": "object",
                             "properties": {
                                 "task" : {
                                     "type": "object",
-                                    "$ref": "#/definitions/Task"
+                                    "$ref": "#/definitions/Customer"
                                 } 
                             }
                         }
@@ -70,7 +70,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/todosResponse"
+                                "$ref": "#/definitions/customersResponse"
                             }
                         }
                     },
@@ -85,28 +85,28 @@
         },
         "/:id" : {
             "put" : {
-                "summary" : "Update the tasks",
-                "description": "Update the tasks",
+                "summary" : "Update the customer",
+                "description": "Update the customer",
                 "produces": ["application/json"],
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "task id that needs to be deleted",
+                        "description": "customer id that needs to be updated",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "task object",
+                        "description": "customer object",
                         "required": true,
                         "schema": {
                             "type": "object",
                             "properties": {
                                 "task" : {
                                     "type": "object",
-                                    "$ref": "#/definitions/Task"
+                                    "$ref": "#/definitions/Customer"
                                 } 
                             }
                         }
@@ -118,7 +118,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/todosResponse"
+                                "$ref": "#/definitions/customerResponse"
                             }
                         }
                     },
@@ -133,14 +133,14 @@
         },
         "/:id" : {
             "delete" : {
-                "summary" : "Delete the task",
-                "description": "Delete the task",
+                "summary" : "Delete the Customer",
+                "description": "Delete the Customer",
                 "produces": ["application/json"],
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "task id that needs to be deleted",
+                        "description": "customer id that needs to be deleted",
                         "required": true,
                         "type": "string"
                     }
@@ -151,7 +151,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/todosResponse"
+                                "$ref": "#/definitions/customerResponse"
                             }
                         }
                     },
@@ -166,33 +166,42 @@
         }
     }, 
     "definitions": {
-        "todosResponse": {
+        "customerResponse": {
             "type": "object",
             "properties": {
                 "id": {
-                     "type": "integer"
+                     "type": "long"
                 },
-                "task": {
+                "name": {
                     "type": "string"
                 },
-                "assignee": {
+                "email": {
                     "type": "string"
                 },
-                "status": {
+                "phoneNo": {
+                    "type": "long"
+                },
+                "address": {
                     "type": "string"
                 }
             }
         },
-        "Task": {
+        "Customer": {
             "type": "object",
             "properties": {
-                "task": {
+                "id": {
+                    "type": "long"
+                },
+                "name": {
                     "type": "string"
                 },
-                "assignee": {
+                "email": {
                     "type": "string"
                 },
-                "status": {
+                "phoneNo": {
+                    "type": "long"
+                },
+                "address": {
                     "type": "string"
                 }
             }
