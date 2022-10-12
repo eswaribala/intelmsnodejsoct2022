@@ -4,7 +4,7 @@ const Account = db.accounts;
 // Create and Save a new Customer
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.id) {
+    if (!req.body.accountNo) {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
