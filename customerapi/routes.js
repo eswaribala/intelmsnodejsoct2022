@@ -16,5 +16,7 @@ module.exports = app => {
     router.put("/:id",controller.updateCustomer);
 
     router.delete("/:id",controller.deleteByCustomerId);
-    app.use("/api/customers", router);
+    //versioning
+    //app.use("/api/customers/v1.0", router);
+    app.use("/api/customers/", router);
 }
