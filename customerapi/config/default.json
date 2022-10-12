@@ -5,5 +5,8 @@
   },
   "mongodb": {
     "url": "mongodb://localhost:27017/customerdb"
+  },
+  "service": {
+    "accountServiceUrl": "http://localhost:3001/api/accounts"
   }
 }

@@ -1,5 +1,9 @@
 const db = require("./dbserver");
 const Customer = db.customers;
+const axios=require('axios')
+const config=require('config')
+
+const serviceUrl=config.get('service.accountServiceUrl');
 
 // Create and Save a new Customer
 exports.create = (req, res) => {
@@ -130,4 +134,13 @@ exports.deleteByCustomerId=(req,res)=>{
                 err.message || 'Some error occurred while reading customer data'
         });
     });
+}
+
+exports.getAccountByAccountNo=(req,res)=>{
+
+    axios.get(serviceUrl+"/"+req.params.accountNo).then(response=>{
+        res.send(response)
+    }).catch(error=>{
+        res.send(error);
+    })
 }
