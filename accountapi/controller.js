@@ -46,7 +46,7 @@ exports.findAllAccounts=(req,res)=>{
 }
 exports.findByAccountNo=(req,res)=>{
     const accountNo=req.params.accountNo;
-    Customer.findById(accountNo).then(data=>{
+    Account.findById(accountNo).then(data=>{
         if(!data){
             res.status(404).send({
                 message:

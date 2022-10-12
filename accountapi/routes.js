@@ -8,13 +8,13 @@ module.exports = app => {
     router.get("/",controller.findAllAccounts);
    //Retrieve customer by id
     //path param
-    router.get("/:id",controller.findByAccountNo);
+    router.get("/:accountNo",controller.findByAccountNo);
 
 
     //path param
-    router.put("/:id",controller.updateAccount);
+    router.put("/:accountNo",controller.updateAccount);
 
-    router.delete("/:id",controller.deleteByAccountNo);
+    router.delete("/:accountNo",controller.deleteByAccountNo);
     //versioning
     //app.use("/api/customers/v1.0", router);
     app.use("/api/accounts/", router);
