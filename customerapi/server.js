@@ -22,11 +22,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 //db connection
-
+/*
 
 const vault = require("node-vault")({
     apiVersion: "v1",
-    endpoint: "http://127.0.0.1:8200",
+    endpoint: "http://localhost:8200",
 });
 
 
@@ -82,8 +82,20 @@ run().then(data=>{
             process.exit();
         });
 })
-
-
+*/
+//mongoose.connect('127.0.0.1', 'happytripdb', 27017, options);
+db.mongoose
+    .connect(db.url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(() => {
+        console.log("Connected to the database!");
+    })
+    .catch(err => {
+        console.log("Cannot connect to the database!", err);
+        process.exit();
+    });
 //step 1
 // Construct a schema, using GraphQL schema language
 var schema = buildSchema(`
