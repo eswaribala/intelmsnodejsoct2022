@@ -5,6 +5,7 @@ const config=require('config');
 const fs = require("fs");
 const swaggerUi = require('swagger-ui-express');
 var { buildSchema } = require('graphql');
+var mongoose=require('mongoose')
 //const swaggerDocument = require('./swagger.json');
 const swaggerFile=require('./swagger_output.json');
 const customCss = fs.readFileSync((process.cwd()+"/swagger.css"), 'utf8');
@@ -88,6 +89,7 @@ run().then(data=>{
 var schema = buildSchema(`
   type Query {
      customers:[Customer]
+     customer(customerId: ID):Customer
   }
   
   type Customer {
@@ -109,6 +111,15 @@ var root = {
         let customers = await Customer.find();
 
         return customers;
+
+    },
+    customer:async (obj) => {
+        console.log(obj.customerId);
+       var id=mongoose.Types.ObjectId(obj.customerId);
+       console.log(id);
+        let customer = await Customer.findById(id)
+
+        return customer;
 
     }
 
