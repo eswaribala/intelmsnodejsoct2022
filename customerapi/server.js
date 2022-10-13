@@ -4,17 +4,24 @@ const cors=require('cors');
 const config=require('config');
 const fs = require("fs");
 const swaggerUi = require('swagger-ui-express');
+var { buildSchema } = require('graphql');
 //const swaggerDocument = require('./swagger.json');
 const swaggerFile=require('./swagger_output.json');
 const customCss = fs.readFileSync((process.cwd()+"/swagger.css"), 'utf8');
 const app=express();
+const db = require("./dbserver");
+const {graphqlHTTP} = require("express-graphql");
+const Customer = db.customers;
+
+
+
 
 //rest methods get,post,put,delete,patch
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 //db connection
-const db = require("./dbserver");
+
 
 const vault = require("node-vault")({
     apiVersion: "v1",
@@ -50,8 +57,7 @@ const run = async () => {
 
 run().then(data=>{
     console.log(data);
-    const db = require("./dbserver");
-    const Customer = db.customers;
+
 
     var options = {
         user: data.username,
@@ -75,6 +81,46 @@ run().then(data=>{
             process.exit();
         });
 })
+
+
+//step 1
+// Construct a schema, using GraphQL schema language
+var schema = buildSchema(`
+  type Query {
+     customers:[Customer]
+  }
+  
+  type Customer {
+   id: Int,
+   name: String,
+   email: String,
+   address: String,
+   password: String,
+   phoneNo: String
+}
+`);
+
+
+//step 2
+// The root provides a resolver function for each API endpoint
+var root = {
+    customers: async () => {
+
+        let customers = await Customer.find();
+
+        return customers;
+
+    }
+
+};
+
+//step3 integrate graphql with express
+app.use('/graphql', graphqlHTTP({
+    schema: schema,
+    rootValue: root,
+    graphiql: true,
+}));
+
 
 
 const host=config.get('server.host');
