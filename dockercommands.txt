@@ -8,3 +8,4 @@ show collections;
 db.customers.find();
 
 
+docker build -f Dockerfile -t customerapi .
