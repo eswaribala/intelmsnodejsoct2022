@@ -21,16 +21,9 @@ const vault = require("node-vault")({
     endpoint: "http://127.0.0.1:8200",
 });
 
-//const roleId = process.env.ROLE_ID;
-//const secretId = process.env.SECRET_ID;
 
 const run = async () => {
-    /*
-    const result = await vault.approleLogin({
-       // role_id: roleId,
-        //secret_id: secretId,
-    });
-*/
+
     vault.token = "s.7a1lmH5XuRV3LsLbmcVE23fh"; // Add token to vault object for subsequent requests.
 
     const { data } = await vault.read("secret/mongodb"); // Retrieve the secret stored in previous steps.
