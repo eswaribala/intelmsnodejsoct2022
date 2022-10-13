@@ -5,3 +5,7 @@ db.createUser(
     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
   }
 )
+
+
+mongosh --port 27017 -u "admin" -p "admin@123" --authenticationDatabase "admin"
+
