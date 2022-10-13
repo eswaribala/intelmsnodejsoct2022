@@ -1,0 +1,11 @@
+query($customerId:ID){
+    customer(customerId:$customerId){
+    name,
+    email
+    }
+}
+
+
+{
+    "customerId":"6345b8a3f0fd52ceafb3bc74"
+}
