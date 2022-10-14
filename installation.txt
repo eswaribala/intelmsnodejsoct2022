@@ -6,3 +6,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; `
   iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 Answer Yes when prompted
 Close and reopen an elevated PowerShell window to start using choco
+
+#install kompose
+choco install kubernetes-kompose
