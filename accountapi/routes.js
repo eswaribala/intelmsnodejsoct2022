@@ -2,6 +2,7 @@ const controller = require("./controller.js");
 const db = require("./dbserver");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const auth=require('./auth')
 const User = db.users;
 module.exports = app => {
     const controller = require("./controller.js");
