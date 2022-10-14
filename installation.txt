@@ -9,3 +9,5 @@ Close and reopen an elevated PowerShell window to start using choco
 
 #install kompose
 choco install kubernetes-kompose
+
+kompose convert -f docker-compose.yaml
