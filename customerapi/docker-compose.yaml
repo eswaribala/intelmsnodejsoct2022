@@ -6,8 +6,8 @@ services:
     command: npm run dev
     ports:
       - "3000:3000"
-    volumes:
-      - .:/usr/app
+    #volumes:
+    #  - .:/usr/app
     depends_on:
       - "mongo"
     networks:
@@ -15,7 +15,7 @@ services:
 
   mongo:
     container_name: "mongo-node"
-    platform: linux/amd64
+    #platform: linux/amd64
     image: mongo:4.4.14
     ports:
       - "27017:27017"

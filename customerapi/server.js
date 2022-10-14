@@ -84,6 +84,7 @@ run().then(data=>{
 })
 */
 //mongoose.connect('127.0.0.1', 'happytripdb', 27017, options);
+
 db.mongoose
     .connect(db.url, {
         useNewUrlParser: true,
