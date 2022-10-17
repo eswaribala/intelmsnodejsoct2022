@@ -164,7 +164,7 @@ const Eureka = require('eureka-js-client').Eureka;
 const eureka = new Eureka({
     instance: {
         app: 'customerapi',
-        hostName: 'localhost',
+        hostName: 'localhost:'+port,
         ipAddr: '127.0.0.1',
         statusPageUrl: 'http://localhost:'+port,
         port: {
