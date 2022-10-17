@@ -145,10 +145,12 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true,
 }));
 
-
+const args=process.argv;
+console.log(args[2]);
 
 const host=config.get('server.host');
-const port=config.get('server.port');
+//const port=config.get('server.port');
+const port=args[2];
 //layered call
 require('./routes')(app);
 //external configuration
