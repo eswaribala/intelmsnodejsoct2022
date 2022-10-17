@@ -150,13 +150,51 @@ console.log(args[2]);
 
 const host=config.get('server.host');
 //const port=config.get('server.port');
-const port=args[2];
+var port=args[2].toString();
 //layered call
 require('./routes')(app);
 //external configuration
 
 //app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {customCss}));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile, {customCss}));
+//====================================eureka configuration================================
+
+const Eureka = require('eureka-js-client').Eureka;
+
+const eureka = new Eureka({
+    instance: {
+        app: 'customerapi',
+        hostName: 'localhost',
+        ipAddr: '127.0.0.1',
+        statusPageUrl: 'http://localhost:'+port,
+        port: {
+            '$': port,
+            '@enabled': 'true',
+        },
+        vipAddress: 'localhost',
+        dataCenterInfo: {
+            '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
+            name: 'MyOwn',
+        }
+    },
+    eureka: {
+        host: 'localhost',
+        port: 8761,
+        servicePath: '/eureka/apps/'
+    }
+});
+eureka.logger.level('debug');
+eureka.start(function(error){
+    console.log(error || 'complete');
+});
+
+
+
+
+
+
+ //========================================Server config=================================
+
 
 app.listen(port,host,function(){
     console.log(`Listening on Port ${port}`)
