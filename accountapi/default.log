@@ -1,0 +1,11 @@
+2022.10.18, 18:26:24.0079 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}

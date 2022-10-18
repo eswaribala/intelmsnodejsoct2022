@@ -1,6 +1,7 @@
 const db = require("./dbserver");
+const elasticsearch = require("elasticsearch");
 const Account = db.accounts;
-
+const log = require("log-to-file");
 // Create and Save a new Customer
 exports.create = (req, res) => {
     // Validate request
@@ -32,10 +33,27 @@ exports.create = (req, res) => {
             });
         });
 };
+//=======================================Elastic Search Engine========================================================
+
+const esClient = elasticsearch.Client({
+    host: "http://localhost:9200",
+})
 
 //retrieve data from database
 exports.findAllAccounts=(req,res)=>{
+    esClient.index({
+        index: 'accounts2022',
+        body: "Starts Logging"
+    })
+        .then(response => {
+            return response.json({"message": "Indexing successful"})
+        })
+        .catch(err => {
+            return res.status(500).json({"message": "Error"})
+        })
+
    Account.find().then(data=>{
+       log(data);
        res.send(data);
     }).catch(err=>{
        res.status(500).send({

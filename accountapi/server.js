@@ -22,6 +22,7 @@ app.use(cors());
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const auth = require("./auth");
+const elasticsearch = require("elasticsearch");
 
 db.mongoose
     .connect(db.url, {
@@ -133,8 +134,10 @@ app.use("*", (req, res) => {
         },
     });
 });
-
  */
+
+
+
 const host=config.get('server.host');
 const port=config.get('server.port');
 //layered call
