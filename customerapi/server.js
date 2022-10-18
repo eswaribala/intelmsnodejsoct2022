@@ -151,8 +151,7 @@ console.log(args[2]);
 const host=config.get('server.host');
 //const port=config.get('server.port');
 var port=args[2].toString();
-//layered call
-require('./routes')(app);
+
 //external configuration
 
 //app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {customCss}));
@@ -195,7 +194,8 @@ eureka.start(function(error){
 
  //========================================Server config=================================
 
-
+//layered call
+require('./routes')(app);
 app.listen(port,host,function(){
     console.log(`Listening on Port ${port}`)
 })

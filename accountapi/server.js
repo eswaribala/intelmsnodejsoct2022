@@ -121,7 +121,7 @@ app.post("/login", async (req, res) => {
 app.get("/welcome", auth, (req, res) => {
     res.status(200).send("Welcome 🙌 ");
 });
-
+/*
 // This should be the last route else any after it won't work
 app.use("*", (req, res) => {
     res.status(404).json({
@@ -133,6 +133,8 @@ app.use("*", (req, res) => {
         },
     });
 });
+
+ */
 const host=config.get('server.host');
 const port=config.get('server.port');
 //layered call

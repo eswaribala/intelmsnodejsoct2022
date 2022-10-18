@@ -17,7 +17,7 @@ module.exports = app => {
 
     router.delete("/:id",controller.deleteByCustomerId);
 
-    router.get("/accounts/:accountNo",controller.getAccountByAccountNo);
+    router.get("/accounts/:accountNo",controller.getByAccountNo);
 
 
     //versioning

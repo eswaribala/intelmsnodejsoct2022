@@ -5,8 +5,8 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "localhost:3000",
-  "basePath": "/api/customers",
+  "host": "localhost:3005/api/customers",
+  "basePath": "/",
   "schemes": [
     "http"
   ],
@@ -174,11 +174,7 @@
             "type": "string"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
+        "responses": {}
       }
     }
   }

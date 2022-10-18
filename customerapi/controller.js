@@ -2,6 +2,7 @@ const db = require("./dbserver");
 const Customer = db.customers;
 const axios=require('axios')
 const config=require('config')
+//const axiosRetry = require("axios-retry");
 
 const serviceUrl=config.get('service.accountServiceUrl');
 
@@ -135,14 +136,54 @@ exports.deleteByCustomerId=(req,res)=>{
         });
     });
 }
+//retry and circuit breaker-- > pending
 
-exports.getAccountByAccountNo=(req,res)=>{
-console.log(req.params.accountNo);
-console.log(serviceUrl)
-    axios.get(serviceUrl+"/"+req.params.accountNo).then(response=>{
+require('es6-promise').polyfill();
+
+var originalFetch = require('isomorphic-fetch');
+var fetch = require('fetch-retry')(originalFetch);
+
+exports.getByAccountNo=(req,res)=>{
+    console.log(req.params.accountNo);
+    console.log(serviceUrl)
+
+    /*
+  axios.get(serviceUrl+ "/"+req.params.accountNo ).then(response => {
         console.log(response.data);
-        res.send(response.data)
-    }).catch(error=>{
-        res.send(error);
+       // res.send(response.data)
+      res.send(response.data);
+    }).catch(error => {
+        //res.send(error);
+       res.send(error);
+    });
+*/
+fetch(serviceUrl+ "/"+req.params.accountNo, {
+        retries: 3,
+        retryDelay: 1000,
+    retryOn: async function(attempt, error, response) {
+        // retry on any network error, or 4xx or 5xx status codes
+        if (attempt > 3) return false;
+
+        if (error !== null || response.status >= 400) {
+            console.log(`retrying, attempt number ${attempt + 1}`);
+            return true;
+        }
+    }
     })
+        .then(function(response) {
+            console.log("retrying");
+            return response.json();
+        })
+        .then(function(json) {
+            // do something with the result
+            console.log(json);
+            res.send(json);
+        });
+
+
 }
+
+
+
+
+
