@@ -26,7 +26,7 @@ const accountsProxy = createProxyMiddleware(optionsAccounts);
 
 app.get('/', (req, res)=> res.send('Gateway API Ready!!!!'));
 
-app.get('/accounts', accountsProxy);
-app.get('/customers', customersProxy);
+app.get('/api/accounts', accountsProxy);
+app.get('/api/customers', customersProxy);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
