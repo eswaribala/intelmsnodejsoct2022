@@ -14,12 +14,13 @@ export class ButtonComponent implements OnInit {
   @Output() onClearList = new EventEmitter<any>();
   @Output() onSnapshot = new EventEmitter<any>();
 
-  route = 'http://localhost:3002/flakeyService';
+  route = 'http://localhost:3001/api/accounts/';
   circuitBreakerOptions = {
     timeout: 500,
     errorThresholdPercentage: 50,
     resetTimeout: 5000,
   };
+// calling the microservice via circuit breaker
   circuit = new opossum(
     () => axios.get(this.route),
     this.circuitBreakerOptions
