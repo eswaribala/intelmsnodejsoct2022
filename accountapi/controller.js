@@ -44,7 +44,9 @@ const esClient = elasticsearch.Client({
 exports.findAllAccounts=(req,res)=>{
     esClient.index({
         index: 'accountsinteloct2022',
-        body: "Starts Logging"
+        body: {
+            message:"starts logging"
+        }
     })
         .then(response => {
             console.log({"message": "Indexing successful"})
@@ -57,7 +59,7 @@ exports.findAllAccounts=(req,res)=>{
             });
 
             */
-            console.log(err);
+            console.log( err.message || 'Some error occurred while reading account data');
         })
 
    Account.find().then(data=>{
