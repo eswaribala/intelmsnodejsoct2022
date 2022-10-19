@@ -45,7 +45,8 @@ exports.findAllAccounts=(req,res)=>{
     esClient.index({
         index: 'accountsinteloct2022',
         body: {
-            message:"starts logging"
+            message:"starts logging",
+            currentTime: new Date()
         }
     })
         .then(response => {

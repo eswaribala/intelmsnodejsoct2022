@@ -5,7 +5,7 @@ services:
     build: .
     command: npm run dev
     ports:
-      - "3000:3000"
+      - "3005:3005"
     #volumes:
     #  - .:/usr/app
     depends_on:
@@ -24,6 +24,26 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: root
     networks:
       - backend
+  prometheus:
+    image: prom/prometheus
+    restart: always
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - backend
+
+  grafana:
+      image: grafana/grafana
+      #command:
+      environment:
+        - GF_SECURITY_ADMIN_PASSWORD=P@ssw0rd
+      restart: always
+      ports:
+        - 3000:3000
+      networks:
+        - backend
 
 networks:
   backend:

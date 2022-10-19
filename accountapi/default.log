@@ -108,3 +108,124 @@
   updatedAt: 2022-10-17T19:50:42.101Z,
   __v: 0
 }
+2022.10.19, 16:07:04.0463 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:15:31.0522 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:15:34.0210 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:16:08.0914 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:16:09.0560 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:16:10.0177 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:20:47.0782 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:21:36.0373 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:21:36.0948 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:21:37.0281 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}
+2022.10.19, 16:21:37.0540 UTC -> {
+  _id: new ObjectId("634db212f1df029a8d88a9a4"),
+  accountNo: 1,
+  dateOfOpening: '2022-01-01',
+  roi: 0.4,
+  balance: 100000,
+  accountType: 'Savings',
+  createdAt: 2022-10-17T19:50:42.101Z,
+  updatedAt: 2022-10-17T19:50:42.101Z,
+  __v: 0
+}

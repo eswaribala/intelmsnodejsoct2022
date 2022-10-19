@@ -3,5 +3,5 @@ WORKDIR /usr/app
 COPY package*.json ./
 RUN npm install --force
 COPY . . 
-EXPOSE 3000
+EXPOSE 3005
 CMD npm run dev
