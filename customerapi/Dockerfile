@@ -4,4 +4,4 @@ COPY package*.json ./
 RUN npm install --force
 COPY . . 
 EXPOSE 3005
-CMD npm run dev
+CMD npm run dev 3005
