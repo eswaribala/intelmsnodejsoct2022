@@ -40,16 +40,24 @@ const esClient = elasticsearch.Client({
 })
 
 //retrieve data from database
+//elastic search index name should be in lower case
 exports.findAllAccounts=(req,res)=>{
     esClient.index({
-        index: 'accounts2022',
+        index: 'accountsinteloct2022',
         body: "Starts Logging"
     })
         .then(response => {
-            return response.json({"message": "Indexing successful"})
+            console.log({"message": "Indexing successful"})
         })
         .catch(err => {
-            return res.status(500).json({"message": "Error"})
+           /*
+            res.status(500).send({
+                message:
+                    err.message || 'Some error occurred while reading account data'
+            });
+
+            */
+            console.log(err);
         })
 
    Account.find().then(data=>{
