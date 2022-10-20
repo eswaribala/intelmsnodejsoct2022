@@ -34,14 +34,15 @@ exports.create = (req, res) => {
         });
 };
 //=======================================Elastic Search Engine========================================================
-
+/*
 const esClient = elasticsearch.Client({
     host: "http://localhost:9200",
 })
-
+*/
 //retrieve data from database
 //elastic search index name should be in lower case
 exports.findAllAccounts=(req,res)=>{
+  /*
     esClient.index({
         index: 'accountsinteloct2022',
         body: {
@@ -60,9 +61,10 @@ exports.findAllAccounts=(req,res)=>{
             });
 
             */
+       /*
             console.log( err.message || 'Some error occurred while reading account data');
         })
-
+*/
    Account.find().then(data=>{
        log(data);
        res.send(data);
@@ -140,4 +142,27 @@ exports.deleteByAccountNo=(req,res)=>{
                 err.message || 'Some error occurred while reading account data'
         });
     });
+}
+
+const amqplib=require('amqplib');
+let rabbitConnection;
+let exchange = 'logs'
+
+//step 1
+amqplib.connect('amqp://localhost').then(connection => rabbitConnection = connection);
+
+//step 2
+const sendRabbitMqMessage = async (message) => {
+    const channel = await rabbitConnection.createChannel();
+    await channel.assertExchange(exchange , 'fanout')
+    await channel.publish(exchange, '', Buffer.from(message))
+}
+
+exports.publishData=async (req, res) => {
+//step 3
+    const message = req.body.message;
+    console.log(`Send message: '${message}'`);
+    await sendRabbitMqMessage(message);
+    res.send(message)
+
 }
