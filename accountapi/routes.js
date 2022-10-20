@@ -21,7 +21,7 @@ module.exports = app => {
 
     router.delete("/:accountNo",controller.deleteByAccountNo);
 
-
+    router.post("/publish",controller.publishData);
 
 
     //versioning
