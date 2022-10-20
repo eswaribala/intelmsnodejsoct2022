@@ -25,7 +25,8 @@
     "nodemon": "^2.0.20",
     "swagger-autogen": "^2.22.0",
     "swagger-jsdoc": "^6.2.5",
-    "swagger-ui-express": "^4.5.0"
+    "swagger-ui-express": "^4.5.0",
+    "amqplib": "^0.10.3"
   },
   "devDependencies": {
     "isomorphic-fetch": "^3.0.0"
