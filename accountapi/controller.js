@@ -166,3 +166,28 @@ exports.publishData=async (req, res) => {
     res.send(message)
 
 }
+
+const { Kafka } = require("kafkajs");
+
+
+
+exports.publishDataOnKafka=async (req, res) => {
+//step 3
+    const kafka = new Kafka({ brokers: ["localhost:9092"] });
+    const producer = kafka.producer();
+    const message = req.body.message;
+    await producer.connect();
+
+    await producer.send({
+        topic: "account-notify",
+        messages: [
+            { value: message },
+        ]
+    });
+    res.send(message)
+
+}
+
+
+
+

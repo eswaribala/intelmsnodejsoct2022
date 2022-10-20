@@ -22,7 +22,7 @@ module.exports = app => {
     router.delete("/:accountNo",controller.deleteByAccountNo);
 
     router.post("/publish",controller.publishData);
-
+    router.post("/publishkafka",controller.publishDataOnKafka);
 
     //versioning
     //app.use("/api/customers/v1.0", router);
