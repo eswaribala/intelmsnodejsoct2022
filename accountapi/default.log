@@ -240,3 +240,14 @@
   updatedAt: 2022-10-17T19:50:42.101Z,
   __v: 0
 }
+2022.10.21, 15:38:42.0224 UTC -> {
+  _id: new ObjectId("6352bcfb67948754aaccf438"),
+  accountNo: 4758585,
+  dateOfOpening: '2022-10-21',
+  roi: 0.6,
+  balance: 3294699,
+  accountType: 'Savings',
+  createdAt: 2022-10-21T15:38:35.445Z,
+  updatedAt: 2022-10-21T15:38:35.445Z,
+  __v: 0
+}
